@@ -26,9 +26,28 @@ namespace SaveTheHumansRework
         Random random = new Random();
         DispatcherTimer enemyTimer = new DispatcherTimer();
         DispatcherTimer targetTimer = new DispatcherTimer();
+        bool humanCaptured = false;
         public MainWindow()
         {
             InitializeComponent();
+
+            enemyTimer.Tick += EnemyTimer_Tick;
+            enemyTimer.Interval = TimeSpan.FromSeconds(2);
+
+            targetTimer.Tick += TargetTimer_Tick;
+
+        }
+
+        private void TargetTimer_Tick(object sender, EventArgs e)
+        {
+            progressBar.ValueChangedEvent += 1;
+            if (progressBar.ValueChangedEvent >= progressBar.Maximum)
+                EndTheGame();
+        }
+
+        private void EnemyTimer_Tick(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void startButton_Click(object sender, RoutedEventArgs e)
@@ -59,6 +78,18 @@ namespace SaveTheHumansRework
             Storyboard.SetTargetProperty(animation, new PropertyPath(propertyToAnimate));
             storyboard.Children.Add(animation);
             storyboard.Begin();
+        }
+        
+        private void EndTheGame()
+        {
+            if (!playArea.Children.Contains(gameOverText))
+            {
+                enemyTimer.Stop();
+                targetTimer.Stop();
+                humanCaptured = false;
+                startButton.Visibility = Visibility.Visible;
+                playArea.Children.Add(gameOverText);
+            }
         }
     }
 }
