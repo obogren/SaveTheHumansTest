@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Windows.Threading;
 using System.Windows.Media.Animation;
 
 namespace SaveTheHumansRework
@@ -23,6 +24,8 @@ namespace SaveTheHumansRework
     public partial class MainWindow : Window
     {
         Random random = new Random();
+        DispatcherTimer enemyTimer = new DispatcherTimer();
+        DispatcherTimer targetTimer = new DispatcherTimer();
         public MainWindow()
         {
             InitializeComponent();
