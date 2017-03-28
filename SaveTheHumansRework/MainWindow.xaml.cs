@@ -35,13 +35,14 @@ namespace SaveTheHumansRework
             enemyTimer.Interval = TimeSpan.FromSeconds(2);
 
             targetTimer.Tick += TargetTimer_Tick;
+            targetTimer.Interval = TimeSpan.FromSeconds(.1);
 
         }
 
-        private void TargetTimer_Tick(object sender, EventArgs e)
+        private void TargetTimer_Tick(object sender, object e)
         {
-            progressBar.ValueChangedEvent += 1;
-            if (progressBar.ValueChangedEvent >= progressBar.Maximum)
+            progressBar.Value += 1;
+            if (progressBar.Value >= progressBar.Maximum)
                 EndTheGame();
         }
 
