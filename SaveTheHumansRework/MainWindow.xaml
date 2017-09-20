@@ -13,7 +13,7 @@
             </Grid>
         </ControlTemplate>
     </Window.Resources>
-    <Grid Background="Black">
+    <Grid x:Name="grid" Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="140"/>
             <ColumnDefinition/>
@@ -37,19 +37,19 @@
                 Text="Avoid These" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Black" Foreground="White"/>
             <ContentControl Content="ContentControl" Template="{DynamicResource EnemyTemplate}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </StackPanel>
-        <Canvas x:Name="playArea" Grid.ColumnSpan="3">
+        <Canvas x:Name="playArea" Grid.ColumnSpan="3" MouseMove="playArea_MouseMove" MouseLeave="playArea_MouseLeave">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0.01"/>
                     <GradientStop Color="#FF0B5D97" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <StackPanel x:Name="human" Orientation="Vertical" Height="520" Width="140">
+            <StackPanel x:Name="human" Orientation="Vertical" Height="520" Width="140" MouseDown="human_MouseDown">
                 <Ellipse Fill="White" Height="10" Width="10"/>
                 <Rectangle Fill="White" Height="25" Width="10"/>
             </StackPanel>
             <TextBlock x:Name="gameOverText" TextWrapping="Wrap" Text="Game Over" FontSize="100" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="253" Canvas.Top="172" FontStyle="Italic" FontWeight="Bold"/>
-            <Rectangle x:Name="target" Height="50" Canvas.Left="225" Canvas.Top="340" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="target" Height="50" Canvas.Left="225" Canvas.Top="340" Width="50" RenderTransformOrigin="0.5,0.5" MouseEnter="target_MouseEnter">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
