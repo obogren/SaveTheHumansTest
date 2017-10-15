@@ -37,6 +37,8 @@ namespace SaveTheHumansRework
             targetTimer.Tick += TargetTimer_Tick;
             targetTimer.Interval = TimeSpan.FromSeconds(.1);
 
+            //int gameScore= 0;
+
         }
 
         private void TargetTimer_Tick(object sender, object e)
@@ -93,6 +95,8 @@ namespace SaveTheHumansRework
             human.IsHitTestVisible = true;
             humanCaptured = false;
             progressBar.Value = 0;
+            //gameScore.Value = 0;
+            
             startButton.Visibility = Visibility.Collapsed;
             playArea.Children.Clear();
             playArea.Children.Add(target);
@@ -132,6 +136,8 @@ namespace SaveTheHumansRework
                 Canvas.SetTop(human, random.Next(100, (int)playArea.ActualHeight - 100));
                 humanCaptured = false;
                 human.IsHitTestVisible = true;
+                //gameScore.Value = 0;     
+                //addToHighScore
             }
         }
 
@@ -155,7 +161,7 @@ namespace SaveTheHumansRework
 
             }
         }
-
+       
         private void playArea_MouseLeave(object sender, MouseEventArgs e)
         {
             if (humanCaptured)
