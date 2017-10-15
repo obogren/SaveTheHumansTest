@@ -97,6 +97,7 @@ namespace SaveTheHumansRework
             progressBar.Value = 0;
             gameScore = 0;
             
+            
             startButton.Visibility = Visibility.Collapsed;
             playArea.Children.Clear();
             playArea.Children.Add(target);
@@ -113,6 +114,7 @@ namespace SaveTheHumansRework
                 humanCaptured = false;
                 startButton.Visibility = Visibility.Visible;
                 playArea.Children.Add(gameOverText);
+                Console.WriteLine("Game Over");
                 //addToHighScore
             }
         }
@@ -137,7 +139,8 @@ namespace SaveTheHumansRework
                 Canvas.SetTop(human, random.Next(100, (int)playArea.ActualHeight - 100));
                 humanCaptured = false;
                 human.IsHitTestVisible = true;
-                gameScore++;     
+                gameScore++;
+                Console.WriteLine(gameScore);     
                 
             }
         }
