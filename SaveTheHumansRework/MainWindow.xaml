@@ -9,7 +9,7 @@
     <Window.Resources>
         <ControlTemplate x:Key="EnemyTemplate" TargetType="{x:Type ContentControl}">
             <Grid>
-                <Ellipse Fill="Red" Height="100" Stroke="Black" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Ellipse Fill="OliveDrab" Height="100" Stroke="Black" Width="75"/>
             </Grid>
         </ControlTemplate>
     </Window.Resources>
