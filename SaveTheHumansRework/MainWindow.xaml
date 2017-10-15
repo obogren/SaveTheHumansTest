@@ -30,6 +30,16 @@
                         </TransformGroup>
                     </Ellipse.RenderTransform>
                 </Ellipse>
+                <Rectangle Fill="Black" HorizontalAlignment="Left" Height="10" Margin="50,63,0,0" Stroke="Black" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="67" AngleY="11"/>
+                            <RotateTransform Angle="-15.501"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
             </Grid>
         </ControlTemplate>
     </Window.Resources>
