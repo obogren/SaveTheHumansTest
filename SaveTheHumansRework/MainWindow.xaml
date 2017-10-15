@@ -96,7 +96,7 @@
                 </Rectangle.Fill>
             </Rectangle>
         </Canvas>
-        <Label x:Name="score" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="235,14,0,0" Grid.Row="1" Background="Black" Foreground="White" Height="36" Width="170" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="gameScoreWindow" Content="{DynamicResource Object1}" Grid.Column="1" HorizontalAlignment="Left" Margin="235,14,0,0" Grid.Row="1" Background="Black" Foreground="White" Height="36" Width="170" VerticalAlignment="Top" FontSize="20"/>
 
 
     </Grid>

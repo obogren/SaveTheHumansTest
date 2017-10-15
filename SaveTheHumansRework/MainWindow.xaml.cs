@@ -27,6 +27,7 @@ namespace SaveTheHumansRework
         DispatcherTimer enemyTimer = new DispatcherTimer();
         DispatcherTimer targetTimer = new DispatcherTimer();
         bool humanCaptured = false;
+        int gameScore = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -37,7 +38,6 @@ namespace SaveTheHumansRework
             targetTimer.Tick += TargetTimer_Tick;
             targetTimer.Interval = TimeSpan.FromSeconds(.1);
 
-            //int gameScore= 0;
 
         }
 
@@ -95,7 +95,7 @@ namespace SaveTheHumansRework
             human.IsHitTestVisible = true;
             humanCaptured = false;
             progressBar.Value = 0;
-            //gameScore.Value = 0;
+            gameScore = 0;
             
             startButton.Visibility = Visibility.Collapsed;
             playArea.Children.Clear();
@@ -113,6 +113,7 @@ namespace SaveTheHumansRework
                 humanCaptured = false;
                 startButton.Visibility = Visibility.Visible;
                 playArea.Children.Add(gameOverText);
+                //addToHighScore
             }
         }
 
@@ -136,8 +137,8 @@ namespace SaveTheHumansRework
                 Canvas.SetTop(human, random.Next(100, (int)playArea.ActualHeight - 100));
                 humanCaptured = false;
                 human.IsHitTestVisible = true;
-                //gameScore.Value = 0;     
-                //addToHighScore
+                gameScore++;     
+                
             }
         }
 
